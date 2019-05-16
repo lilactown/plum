@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if test "$1" = 'install'; then
-    git pull;
-    echo "Setting up..."
-    cd clj && clojure -m lark.install
+if test "$1" = 'update'; then
+    echo "Pulling latest..."
+    cd ~/.lark/clj;
+    git pull && clojure -m lark.install
     exit;
 fi
 

@@ -11,6 +11,10 @@
                                   :indents   cljfmt/default-indents
                                   :alias-map {}}))
 
+(defn lark-location []
+  (str (System/getProperty "user.home")
+       "/.lark/clj/"))
+
 (defn user-deps-location []
   (str (System/getProperty "user.home")
        "/.clojure/deps.edn"))

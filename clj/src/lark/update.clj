@@ -1,4 +1,4 @@
-(ns lark.install
+(ns lark.update
   (:gen-class)
   (:require [rewrite-clj.zip :as z]
             [lark.inject :as inject]
@@ -6,11 +6,11 @@
             [lark.util :as util]))
 
 (def aliases
-  '{:lark/inject {:extra-deps {lilactown/lark {:local/root "/usr/local/bin/lark/clj/"}}
+  `{:lark/inject {:extra-deps {lilactown/lark {:local/root ~(util/lark-location)}}
                   :main-opts ["-m" "lark.inject"]}
-    :lark/install {:extra-deps {lilactown/lark {:local/root "/usr/local/bin/lark/clj/"}}
-                   :main-opts ["-m" "lark.install"]}
-    :lark/add {:extra-deps {lilactown/lark {:local/root "/usr/local/bin/lark/clj/"}}
+    :lark/update {:extra-deps {lilactown/lark {:local/root ~(util/lark-location)}}
+                   :main-opts ["-m" "lark.update"]}
+    :lark/add {:extra-deps {lilactown/lark {:local/root ~(util/lark-location)}}
                :main-opts ["-m" "lark.add"]}
     :lark/repl {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
                 :main-opts  ["-m" "rebel-readline.main"]}
