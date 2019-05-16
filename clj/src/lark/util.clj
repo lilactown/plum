@@ -11,6 +11,9 @@
                                   :indents   cljfmt/default-indents
                                   :alias-map {}}))
 
+(defn user-deps-location []
+  (str (System/getProperty "user.home")
+       "/.clojure/deps.edn"))
+
 (defn user-deps-edn []
-  (read-string (slurp (str (System/getProperty "user.home")
-                           "/.clojure/deps.edn"))))
+  (read-string (slurp (user-deps-location))))

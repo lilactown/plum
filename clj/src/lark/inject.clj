@@ -21,11 +21,11 @@
                              (-> (z/assoc deps-edn :aliases {})
                                  (z/get :aliases)))]
         (if-let [alias-v (z/get deps-aliases alias)]
-        ;; alias exists
+          ;; alias exists
           (if (= (read-string (z/string alias-v)) (aliases alias))
-          ;; already injected
+            ;; already injected
             (result nil ::exists location alias)
-          ;; exists but different. maybe old version?
+            ;; exists but different. maybe old version?
             (result (-> deps-aliases
                         (z/assoc alias (aliases alias))
                         (z/get alias)
@@ -35,7 +35,7 @@
                     ::exists-but-different
                     location
                     alias))
-        ;; alias doesn't exist. inject it
+          ;; alias doesn't exist. inject it
           (result (-> deps-aliases
                       (z/assoc alias (aliases alias))
                       (z/get alias)
