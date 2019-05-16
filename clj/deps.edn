@@ -1,0 +1,4 @@
+{:paths ["src"]
+ :deps {org.clojure/tools.cli {:mvn/version "0.4.2"}
+        rewrite-clj {:mvn/version "0.6.1"}
+        cljfmt {:mvn/version "0.6.4"}}}
