@@ -1,0 +1,5 @@
+{:paths ["src"]
+ :deps {123 546345}
+ :aliases {:dev {:foo :bar}
+           :larklark nil
+           :lark/repl {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}, :main-opts ["-m" "rebel-readline.main"]}}}
