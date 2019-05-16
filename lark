@@ -1,8 +1,10 @@
 #!/bin/sh
 
-echo "$1";
-
 if test "$1" = 'install'; then
     git pull;
+    echo "Setting up..."
     cd clj && clojure -m lark.install
+    exit;
 fi
+
+clojure -A:lark/"$@"
