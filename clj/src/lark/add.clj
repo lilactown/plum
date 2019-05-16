@@ -31,7 +31,7 @@
                  "dummy.edn")))
 
 (defn -main [& args]
-  (let [file "dummy.edn"]
+  (let [file "deps.edn"]
     (println (str "Adding dep " (first args) " {:mvn/version \"" (second args) "\"} to " file))
     (spit file
           (add-dep (symbol (first args))

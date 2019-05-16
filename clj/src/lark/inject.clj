@@ -84,4 +84,4 @@
   (inject-command* (inject alias location)))
 
 (defn -main [& args]
-  (inject-command {} (keyword "lark" (first args)) "dummy.edn"))
+  (inject-command {} (keyword "lark" (first args)) "deps.edn"))
