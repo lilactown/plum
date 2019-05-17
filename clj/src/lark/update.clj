@@ -27,7 +27,7 @@
                               :sha "3cb0a9daf1cb746259dc8309b218f9211ad3b33b"}}
                 :main-opts ["-m" "cognitect.test-runner"
                             "-d" "test"
-                            "-d" "src/test/clojure"]})
+                            "-d" "src/test/clojure"]}})
 
 
 (defn install-aliases [deps-aliases]
