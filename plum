@@ -12,4 +12,36 @@ if test "$1" = 'update'; then
     exit;
 fi
 
+if test "$1" = 'help'; then
+    echo "Usage: plum [command] [...args]";
+    echo "";
+    echo "plum is a helpful wrapper around the Clojure CLI tools and tools.deps for";
+    echo "running commands within a project."
+    echo ""
+    echo "If you're interested in learning more about how to use the Clojure CLI tools and"
+    echo "deps.edn directly, visit https://clojure.org/guides/deps_and_cli";
+    echo "";
+    echo "Available commands:";
+    echo "  update:                   Updates plum commands to the latest version.";
+    echo "  help:                     Shows this help message.";
+    echo "  add [package] [version]:  Adds the library package and version to local deps.edn";
+    echo "  repl:                     Starts a REPL in the current project with advanced readline features.";
+    echo "                            See https://github.com/bhauman/rebel-readline";
+    echo "  new [...args]:            Creates a new Clojure(Script) project based on a template.";
+    echo "                            See https://github.com/seancorfield/clj-new";
+    echo "  gen [...args]:            Creates new file(s) based on a generator.";
+    echo "                            See https://github.com/seancorfield/clj-new#clj-generators";
+    echo "  test [...args]:           Executes tests within a project.";
+    echo "                            See https://github.com/cognitect-labs/test-runner";
+    echo "  outdated [...args]:       Reports out of date depencies and (optionally) upgrades them.";
+    echo "                            See https://github.com/Olical/depot";
+    echo "  inject [alias]:           Inserts any of the above aliases into your local deps.edn for modification.";
+    echo "";
+    echo "For help with an individual command, see the linked repos in their description"
+    echo "for documentation and filing issues."
+    echo "";
+    echo "For any other help, see https://github.com/Lokeh/plum and #plum on clojurians.net Slack."
+    exit;
+fi
+
 clojure -A:plum/"$@"

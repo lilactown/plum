@@ -16,8 +16,8 @@
     :plum/new {:extra-deps {seancorfield/clj-new
                             {:mvn/version "0.5.5"}}
                :main-opts ["-m" "clj-new.create"]}
-    :plum/deps {:extra-deps {olical/depot {:mvn/version "1.8.2"}}
-                :main-opts ["-m" "depot.outdated.main"]}
+    :plum/outdated {:extra-deps {olical/depot {:mvn/version "1.8.2"}}
+                    :main-opts ["-m" "depot.outdated.main"]}
     :plum/gen {:extra-deps {seancorfield/clj-new
                             {:mvn/version "0.5.5"}}
                :main-opts ["-m" "clj-new.generate"]}
