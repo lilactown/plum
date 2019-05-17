@@ -1,4 +1,4 @@
-(ns lark.util
+(ns plum.util
   (:require [cljfmt.core :as cljfmt]))
 
 (defn prettify [string]
@@ -11,9 +11,9 @@
                                   :indents   cljfmt/default-indents
                                   :alias-map {}}))
 
-(defn lark-location []
+(defn plum-location []
   (str (System/getProperty "user.home")
-       "/.lark/clj/"))
+       "/.plum/clj/"))
 
 (defn user-deps-location []
   (str (System/getProperty "user.home")

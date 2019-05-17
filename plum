@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+if test "$1" = 'update'; then
+    echo "Pulling latest..."
+    cd ~/.plum/;
+    git pull;
+    # run command to update global deps.edn with latest :plum/* aliases
+    cd clj/ &&  clojure -m plum.update;
+    # copy latest version of this script to installation path
+    cp ../plum /usr/local/bin/plum
+    exit;
+fi
+
+clojure -A:plum/"$@"

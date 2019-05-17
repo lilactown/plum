@@ -1,8 +1,8 @@
-(ns lark.add
+(ns plum.add
   (:gen-class)
   (:require [rewrite-clj.zip :as z]
             [rewrite-clj.node :as node]
-            [lark.util :as util]))
+            [plum.util :as util]))
 
 (defn add-dep [package version location]
   (let [deps-edn (z/of-file location)

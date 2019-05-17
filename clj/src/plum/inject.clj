@@ -1,8 +1,8 @@
-(ns lark.inject
+(ns plum.inject
   (:gen-class)
   (:require [rewrite-clj.zip :as z]
             [rewrite-clj.node :as node]
-            [lark.util :as util]))
+            [plum.util :as util]))
 
 (defn result [v tag loc a]
   {:value v
@@ -47,7 +47,7 @@
                   alias))))))
 
 (comment
-  (inject :lark/new "/Users/will/.clojure/deps.edn"))
+  (inject :plum/new "/Users/will/.clojure/deps.edn"))
 
 (defmulti inject-command* :tag)
 
@@ -84,4 +84,4 @@
   (inject-command* (inject alias location)))
 
 (defn -main [& args]
-  (inject-command {} (keyword "lark" (first args)) "deps.edn"))
+  (inject-command {} (keyword "plum" (first args)) "deps.edn"))
