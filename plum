@@ -44,4 +44,5 @@ if test "$1" = 'help'; then
     exit;
 fi
 
+echo "clojure -A:plum/$@"
 clojure -A:plum/"$@"
