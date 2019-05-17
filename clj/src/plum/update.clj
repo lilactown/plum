@@ -1,7 +1,6 @@
 (ns plum.update
   (:gen-class)
   (:require [rewrite-clj.zip :as z]
-            [plum.inject :as inject]
             [rewrite-clj.node :as node]
             [plum.util :as util]))
 
