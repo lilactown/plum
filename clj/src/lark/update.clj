@@ -17,6 +17,8 @@
     :lark/new {:extra-deps {seancorfield/clj-new
                             {:mvn/version "0.5.5"}}
                :main-opts ["-m" "clj-new.create"]}
+    :lark/outdated {:extra-deps {olical/depot {:mvn/version "..."}}
+                    :main-opts ["-m" "depot.outdated.main"]}
     :lark/gen {:extra-deps {seancorfield/clj-new
                             {:mvn/version "0.5.5"}}
                :main-opts ["-m" "clj-new.generate"]}
