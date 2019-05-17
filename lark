@@ -3,7 +3,7 @@
 if test "$1" = 'update'; then
     echo "Pulling latest..."
     cd ~/.lark/clj;
-    git pull && clojure -m lark.install
+    git pull && clojure -m lark.update
     exit;
 fi
 

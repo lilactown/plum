@@ -16,7 +16,18 @@
                 :main-opts  ["-m" "rebel-readline.main"]}
     :lark/new {:extra-deps {seancorfield/clj-new
                             {:mvn/version "0.5.5"}}
-               :main-opts ["-m" "clj-new.create"]}})
+               :main-opts ["-m" "clj-new.create"]}
+    :lark/gen {:extra-deps {seancorfield/clj-new
+                            {:mvn/version "0.5.5"}}
+               :main-opts ["-m" "clj-new.generate"]}
+    :lark/test {:extra-paths ["test" "src/test/clojure"]
+                :extra-deps {org.clojure/test.check {:mvn/version "RELEASE"}
+                             com.cognitect/test-runner
+                             {:git/url "https://github.com/cognitect-labs/test-runner"
+                              :sha "3cb0a9daf1cb746259dc8309b218f9211ad3b33b"}}
+                :main-opts ["-m" "cognitect.test-runner"
+                            "-d" "test"
+                            "-d" "src/test/clojure"]})
 
 
 (defn install-aliases [deps-aliases]
