@@ -9,8 +9,9 @@ git clone https://github.com/Lokeh/plum && mv plum .plum
 
 cp .plum/plum /usr/local/bin/plum
 
+# Needs to be run at least once to install the global aliases
 plum update
 
-# Testing
-plum repl
+# Usage
+plum help
 ```
