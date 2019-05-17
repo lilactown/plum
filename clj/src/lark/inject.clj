@@ -59,7 +59,7 @@
   [{:keys [value location]}]
   (println "Alias already exists, but doesn't match latest version. Replace? (Y/n)")
   (case (read-line)
-    ("Y" "y" "") (do (println "Replacing with latest version...")
+    ("Y" "y" "") (do (println "Replacing with latest version.")
                      (spit location (util/prettify value))
                      (println "Success!"))
     ("N" "n") (println "Aborting!")))
@@ -68,7 +68,7 @@
   [{:keys [value location alias]}]
   (println (str "Adding new alias " alias ". This will modify your deps.edn. OK? (Y/n)"))
   (case (read-line)
-    ("Y" "y" "") (do (println "Adding alias...")
+    ("Y" "y" "") (do (println "Adding alias.")
                      (spit location (util/prettify value))
                      (println "Success!"))
     ("N" "n") (println "Aborting!")))

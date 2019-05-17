@@ -9,7 +9,7 @@
   `{:lark/inject {:extra-deps {lilactown/lark {:local/root ~(util/lark-location)}}
                   :main-opts ["-m" "lark.inject"]}
     :lark/update {:extra-deps {lilactown/lark {:local/root ~(util/lark-location)}}
-                   :main-opts ["-m" "lark.update"]}
+                  :main-opts ["-m" "lark.update"]}
     :lark/add {:extra-deps {lilactown/lark {:local/root ~(util/lark-location)}}
                :main-opts ["-m" "lark.add"]}
     :lark/repl {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
@@ -18,7 +18,7 @@
                             {:mvn/version "0.5.5"}}
                :main-opts ["-m" "clj-new.create"]}
     :lark/deps {:extra-deps {olical/depot {:mvn/version "1.8.2"}}
-                    :main-opts ["-m" "depot.outdated.main"]}
+                :main-opts ["-m" "depot.outdated.main"]}
     :lark/gen {:extra-deps {seancorfield/clj-new
                             {:mvn/version "0.5.5"}}
                :main-opts ["-m" "clj-new.generate"]}
@@ -30,7 +30,6 @@
                 :main-opts ["-m" "cognitect.test-runner"
                             "-d" "test"
                             "-d" "src/test/clojure"]}})
-
 
 (defn install-aliases [deps-aliases]
   (-> (loop [deps-aliases deps-aliases
@@ -56,10 +55,11 @@
                              (z/right))
                          (-> (z/assoc deps-edn :aliases {})
                              (z/get :aliases)))]
-    (println (str "Installing aliases into " file "..."))
+    (println (str "Backing up " file " to " (str file ".bak") "."))
+    (spit (str file ".bak") (slurp file))
+    (println (str "Installing aliases into " file "."))
     (spit file (install-aliases deps-aliases))
     (println "Success!")))
 
 (comment
-  (-main)
-  )
+  (-main))
