@@ -35,7 +35,7 @@ if test "$1" = 'help'; then
     echo "                            See https://github.com/cognitect-labs/test-runner";
     echo "  outdated [...args]:       Reports out of date depencies and (optionally) upgrades them.";
     echo "                            See https://github.com/Olical/depot";
-    echo "  inject [command]:         Inserts any of the above commands into your local deps.edn as an lias.";
+    echo "  inject [command]:         Inserts any of the above commands into your local deps.edn as an alias.";
     echo "";
     echo "For help with an individual command, see the linked repos in their description"
     echo "for documentation and filing issues."
