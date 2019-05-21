@@ -5,9 +5,13 @@
 ```sh
 cd ~
 
-git clone https://github.com/Lokeh/plum && mv plum .plum
+git clone https://github.com/Lokeh/plum .plum
 
-cp .plum/plum /usr/local/bin/plum
+# Install globally with
+
+ln -s ~/.plum/plum /usr/local/bin/plum
+    
+#, or link to another folder on your path as `~/bin`.
 
 # Needs to be run at least once to install the global aliases
 plum update
