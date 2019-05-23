@@ -1,0 +1,45 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Roboto Slab, serif;
+    font-size: 16px;
+    background: #fffcfc;
+    color: #333;
+    padding: 10px 30px 50px;
+    margin: 0;
+}
+
+#main {
+    margin: 0 auto;
+    max-width: 760px;
+    /* width: -moz-fit-content; */
+    /* width: -webkit-fit-content; */
+    /* width: fit-content; */
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.code-snippet {
+    margin: 0 auto;
+    padding: 20px;
+    background: #fdf5f5;
+    overflow: scroll;
+    max-width: 100%;
+}
+
+.centered {
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}

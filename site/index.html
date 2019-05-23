@@ -1,0 +1,78 @@
+<html>
+    <head>
+	      <title>Will Acton // Software Developer</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="main">
+            <h1>Plum</h1>
+            <h2>A tool for managing <a href="https://clojure.org">Clojure</a> projects.</h2>
+            <pre class="code-snippet centered"><code>git clone https://github.com/Lokeh/plum.git ~/.plum/
+
+# install globally
+ln -s ~/.plum/plum /usr/local/bin/plum
+# or place somewhere else on your $PATH, e.g. ~/bin/
+
+# update and complete installation
+plum update
+
+# print usage
+plum help</code></pre>
+            <h3>Get started with Clojure development today!</h3>
+            <p><code>plum</code> uses the official <a href="https://clojure.org/guides/deps_and_cli" >Clojure CLI tools</a>
+                and <code>deps.edn</code> format to manage your project.
+            </p>
+            <p>It comes built-in with common utilities like project generation, adding new dependencies,
+                running tests, and starting a REPL.</p>
+
+
+            <h3>Quick Start Guide</h3>
+            <p>To get started developing Clojure with the help of <code>plum</code>,
+                you'll first need to install the Clojure CLI tools.</p>
+            <p>Follow the <a href="https://clojure.org/guides/getting_started" >Clojure Getting Started Guide</a>
+                and install the command line tools for your OS.
+                To install plum, follow the instructions in the snippet at the
+                top of this page.</p>
+            <p>To generate a new project, we can use the <code>plum new</code> command:</p>
+            <pre class="code-snippet">$ <strong>plum new app my-name/my-new-app</strong><code>
+clojure -A:plum/new app my-name/my-new-app
+Generating a project called my-new-app based on the 'app' template.
+
+$ </code><strong>cd my-new-app</strong></pre>
+                <p>Adding dependencies is easy:</p>
+                <pre class="code-snippet">$ <strong>plum add clj-time "0.15.0"</strong><code>
+clojure -A:plum/add clj-time 0.15.0
+Adding dep clj-time 0.15.0 to deps.edn.
+Success!</code></pre>
+                <p>To start a REPL and start exploring, <code>plum repl</code> will
+                    start Clojure with readline, syntax highlighting, and autocomplate:</p>
+                <pre class="code-snippet">$ <strong>plum repl</strong><code>
+clojure -A:plum/repl
+Downloading: clj-time/clj-time/0.15.0/clj-time-0.15.0.pom from https://repo.clojars.org/
+Downloading: joda-time/joda-time/2.10/joda-time-2.10.pom from https://repo1.maven.org/maven2/
+Downloading: joda-time/joda-time/2.10/joda-time-2.10.jar from https://repo1.maven.org/maven2/
+Downloading: clj-time/clj-time/0.15.0/clj-time-0.15.0.jar from https://repo.clojars.org/
+[Rebel readline] Type :repl/help for online help info
+user=></code></pre>
+
+
+
+                <h3>Learning Clojure</h3>
+                <p>The official Clojure docs have a <a href="https://clojure.org/guides/learn/syntax" >Learning Clojure</a>
+                    section that goes over syntax, functions, and other important parts of the Clojure language.</p>
+                <p>The Clojure community is very rich with information. Check out the <a href="https://clojure.org/community/resources" >Community Resources</a> section to find links to Slack, forums, books and other learning resources.</p>
+
+
+                <h3>Community</h3>
+                <p><code>plum</code> is intended to be a community project. Each
+                    plum command is implemented as it's own project which may
+                    have its own maintainer and contribution process. Help is always
+                    appreciated in filing, triaging and fixing bugs and adding new
+                    features to help make Clojure a fun, easy language to work with.</p>
+                <p>Issues can be filed on <a href="https://github.com/Lokeh/plum/">GitHub</a>.</p>
+                <p>Questions are best answered on the <a href="https://clojurians.net" >Clojurians Slack</a>
+                    group in channel <code>#plum</code></p>
+        </div>
+    </body>
+</html>
