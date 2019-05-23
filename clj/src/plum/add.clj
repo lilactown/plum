@@ -83,7 +83,7 @@
 
 (defn -main [& args]
   (let [file "deps.edn"]
-    (println (str "Adding dep " (first args) " {:mvn/version \"" (second args) "\"} to " file "."))
+    (println (str "Adding dep " (first args) (when (second args) (str " " (second args))) " to " file "."))
     (spit file
           (add-dep {:package (symbol (first args))
                     :version (second args)
