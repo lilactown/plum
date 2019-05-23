@@ -16,7 +16,7 @@
 
 (defmethod dep-type :mvn
   [{:keys [package version]}]
-  {:deps/package package
+  {:deps/package (symbol package)
    :deps/version {:mvn/version version}})
 
 (comment
@@ -85,7 +85,7 @@
   (let [file "deps.edn"]
     (println (str "Adding dep " (first args) (when (second args) (str " " (second args))) " to " file "."))
     (spit file
-          (add-dep {:package (symbol (first args))
+          (add-dep {:package (first args)
                     :version (second args)
                     :deps-file file}))
     (println "Success!")))
