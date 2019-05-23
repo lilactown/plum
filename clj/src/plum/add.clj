@@ -63,7 +63,7 @@
         dep-type (dep-type dep-info)]
     (if-let [package-version (z/get deps-map (:deps/package dep-type))]
       (-> package-version
-          (z/replace (:deps/version dep-type))
+          (z/edit merge (:deps/version dep-type))
           (z/root-string)
           (util/prettify))
       (-> deps-map
@@ -78,7 +78,7 @@
 (comment
   (spit "dummy.edn"
         (add-dep {:package "https://github.com/clojure/clojure.git"
-                  :version "asdfjlkjasdf"
+                  :version "new"
                   :deps-file "dummy.edn"})))
 
 (defn -main [& args]
