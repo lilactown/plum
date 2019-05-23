@@ -4,8 +4,8 @@
             [rewrite-clj.node :as node]
             [plum.util :as util]))
 
-(defn add-dep [package version location]
-  (let [deps-edn (z/of-file location)
+(defn add-dep [{:keys [package version deps-file]}]
+  (let [deps-edn (z/of-file deps-file)
         deps-map (or (-> deps-edn
                          (z/find-value z/next :deps)
                          (z/right))
@@ -27,14 +27,15 @@
 
 (comment
   (spit "dummy.edn"
-        (add-dep (symbol "org.clojure/clojure") "1.10.0"
-                 "dummy.edn")))
+        (add-dep {:package (symbol "org.clojure/clojure")
+                  :version "1.10.0"
+                  :deps-file "dummy.edn"})))
 
 (defn -main [& args]
   (let [file "deps.edn"]
     (println (str "Adding dep " (first args) " {:mvn/version \"" (second args) "\"} to " file "."))
     (spit file
-          (add-dep (symbol (first args))
-                   (second args)
-                   file))
+          (add-dep {:package (symbol (first args))
+                    :version (second args)
+                    :deps-file file}))
     (println "Success!")))
