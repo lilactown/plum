@@ -42,5 +42,23 @@ if test "$1" = 'help'; then
     exit;
 fi
 
-echo "clojure -A:plum/$@"
-clojure -A:plum/"$@"
+version_split=`clojure -h | head -n1 | awk '{print $2}' | sed -e 's/\./ /g'`
+v_major=`echo $version_split | awk '{print $1}'`
+v_minor=`echo $version_split | awk '{print $2}'`
+v_patch=`echo $version_split | awk '{print $3}'`
+v_build=`echo $version_split | awk '{print $4}'`
+
+if [[ v_major -gt 1 ]] || [[ v_minor -gt 10 ]] || [[ v_patch -gt 1 ]];
+then
+    switch="M"
+else
+    if [[ v_major -ge 1 ]] && [[ v_minor -ge 10 ]] && [[ v_patch -ge 1 ]] && [[ v_build -ge 697 ]] ;
+    then
+        switch="M"
+    else
+        switch="A"
+    fi
+fi
+
+echo "clojure -$switch:plum/$@"
+clojure -$switch:plum/"$@"
